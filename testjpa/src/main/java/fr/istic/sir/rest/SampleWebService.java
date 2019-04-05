@@ -2,6 +2,7 @@ package fr.istic.sir.rest;
 
 import java.util.ArrayList;
 
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -33,9 +34,16 @@ public class SampleWebService {
     @Path("/users")
     @Produces(MediaType.APPLICATION_JSON)
     public void addUsers(Utilisateur u) {
-    	System.out.println(u.getNom()+" / "+u.getPrenom());
     	Users usersEntity = new Users();
     	usersEntity.saveUser(u);
+    }
+    
+    @DELETE
+    @Path("/users")
+    @Produces(MediaType.APPLICATION_JSON)
+    public void deleteUsers(Utilisateur u) {
+    	Users usersEntity = new Users();
+    	usersEntity.deleteUser(u);
     }
     
     @GET

@@ -37,4 +37,10 @@ public class Users {
 		}
 		EntityManagerHelper.commit();
 	}
+	
+	public void deleteUser(Utilisateur u) {
+		EntityManagerHelper.beginTransaction();
+		EntityManagerHelper.getEntityManager().remove(EntityManagerHelper.getEntityManager().contains(u) ? u : EntityManagerHelper.getEntityManager().merge(u));
+		EntityManagerHelper.commit();
+	}
 }
