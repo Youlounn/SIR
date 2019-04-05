@@ -36,7 +36,7 @@ public class Sondage {
 		this.createur = createur;
 	}
 	
-	@JsonBackReference
+	@JsonBackReference(value = "participants")
 	@ManyToMany(fetch=FetchType.LAZY)
 	public List<Utilisateur> getParticipants() {
 		return participants;
@@ -55,7 +55,7 @@ public class Sondage {
 		this.participants = participants;
 	}
 	
-	@JsonBackReference
+	@JsonBackReference(value = "createur")
     @ManyToOne(fetch=FetchType.LAZY)
 	public Utilisateur getCreateur() {
 		return createur;

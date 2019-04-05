@@ -85,7 +85,7 @@ public class Utilisateur {
 		this.datesSelectionnees = datesSelectionnees;
 	}
 	
-	@JsonManagedReference
+	@JsonManagedReference(value = "createur")
 	@OneToMany(mappedBy="createur", fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	public List<Sondage> getSondagesCrees() {
 		return sondagesCrees;
@@ -95,7 +95,7 @@ public class Utilisateur {
 		this.sondagesCrees = sondagesCrees;
 	}
 
-	@JsonManagedReference
+	//@JsonManagedReference(value = "participants")
 	@ManyToMany(mappedBy="participants", fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	public List<Sondage> getSondagesParticipation() {
 		return sondagesParticipation;
