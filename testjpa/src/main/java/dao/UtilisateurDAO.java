@@ -10,7 +10,7 @@ import javax.persistence.Persistence;
 import jpa.EntityManagerHelper;
 import jpa.Utilisateur;
 
-public class Users {
+public class UtilisateurDAO {
 
 	public ArrayList<Utilisateur> getUsers() {
 		ArrayList<Utilisateur> users = (ArrayList<Utilisateur>) EntityManagerHelper.getEntityManager().createQuery("Select a From Utilisateur a", Utilisateur.class).getResultList();

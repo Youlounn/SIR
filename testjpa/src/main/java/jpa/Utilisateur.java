@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
-import org.codehaus.jackson.annotate.JsonBackReference;
 import org.codehaus.jackson.annotate.JsonManagedReference;
 
 @Entity
@@ -24,7 +23,6 @@ public class Utilisateur {
 	List<Sondage> sondagesParticipation = new ArrayList<Sondage>();
 	
 	public Utilisateur() {
-		
 	}
 	
 	public Utilisateur(String nom, String prenom, String email) {
@@ -95,7 +93,7 @@ public class Utilisateur {
 		this.sondagesCrees = sondagesCrees;
 	}
 
-	//@JsonManagedReference(value = "participants")
+	@JsonManagedReference(value = "participants")
 	@ManyToMany(mappedBy="participants", fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	public List<Sondage> getSondagesParticipation() {
 		return sondagesParticipation;

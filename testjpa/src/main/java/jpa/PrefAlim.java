@@ -6,13 +6,12 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-class PrefAlim {
+public class PrefAlim {
 	
 	int id;
 	String prefAlim;
 	
 	public PrefAlim(){
-		
 	}
 	
 	public PrefAlim(String pa) {

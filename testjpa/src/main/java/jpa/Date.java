@@ -13,14 +13,14 @@ import javax.persistence.ManyToOne;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 @Entity
-class Date {
+public class Date {
 	
 	int id;
 	java.sql.Date date;
 	boolean pause;
-	@JsonIgnore
+	//@JsonIgnore
 	List<Utilisateur> participants = new ArrayList<Utilisateur>();
-	@JsonIgnore
+	//@JsonIgnore
 	Sondage sondage;
 	
 	public Date() {
@@ -46,11 +46,9 @@ class Date {
 		return id;
 	}
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 
 	public java.sql.Date getDate() {
 		return date;

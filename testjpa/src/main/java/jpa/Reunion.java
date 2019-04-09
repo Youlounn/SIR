@@ -5,13 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-class Reunion {
+public class Reunion {
 	
 	int id;
 	String intitule, resume;
 	
 	public Reunion(){
-		
 	}
 	
 	public Reunion(String i, String r) {
@@ -43,4 +42,5 @@ class Reunion {
 	public void setResume(String resume) {
 		this.resume = resume;
 	}
+	
 }

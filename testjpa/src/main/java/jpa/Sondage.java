@@ -28,7 +28,6 @@ public class Sondage {
 	Reunion reunion;
 	
 	public Sondage() {
-		
 	}
 	
 	public Sondage(List<Utilisateur> participants, Utilisateur createur) {

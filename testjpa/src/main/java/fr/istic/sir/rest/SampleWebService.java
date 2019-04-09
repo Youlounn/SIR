@@ -26,7 +26,7 @@ public class SampleWebService {
     @Path("/users")
     @Produces(MediaType.APPLICATION_JSON)
     public ArrayList<Utilisateur> getUsers() {
-    	Users usersEntity = new Users();
+    	UtilisateurDAO usersEntity = new UtilisateurDAO();
     	return usersEntity.getUsers();
     }
     
@@ -34,7 +34,7 @@ public class SampleWebService {
     @Path("/users")
     @Produces(MediaType.APPLICATION_JSON)
     public void addUsers(Utilisateur u) {
-    	Users usersEntity = new Users();
+    	UtilisateurDAO usersEntity = new UtilisateurDAO();
     	usersEntity.saveUser(u);
     }
     
@@ -42,7 +42,7 @@ public class SampleWebService {
     @Path("/users")
     @Produces(MediaType.APPLICATION_JSON)
     public void deleteUsers(Utilisateur u) {
-    	Users usersEntity = new Users();
+    	UtilisateurDAO usersEntity = new UtilisateurDAO();
     	usersEntity.deleteUser(u);
     }
     
@@ -50,7 +50,7 @@ public class SampleWebService {
     @Path("/users/sondageCrea/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public ArrayList<Utilisateur> getCreateurBySondageId(@PathParam("id") String id) {
-    	Users usersEntity = new Users();
+    	UtilisateurDAO usersEntity = new UtilisateurDAO();
     	System.out.println("id = "+id);
     	return usersEntity.getCreateurBySondageId(id);
     }
@@ -59,7 +59,7 @@ public class SampleWebService {
     @Path("/users/sondageParticipants/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public ArrayList<Utilisateur> getParticipantsBySondageId(@PathParam("id") String id) {
-    	Users usersEntity = new Users();
+    	UtilisateurDAO usersEntity = new UtilisateurDAO();
     	return usersEntity.getParticipantsBySondageId(id);
     }
     
@@ -67,7 +67,7 @@ public class SampleWebService {
     @Path("/sondages")
     @Produces(MediaType.APPLICATION_JSON)
     public ArrayList<Sondage> getSondages() {
-    	Sondages sondagesEntity = new Sondages();
+    	SondageDAO sondagesEntity = new SondageDAO();
     	return sondagesEntity.getSondages();
     }
 }

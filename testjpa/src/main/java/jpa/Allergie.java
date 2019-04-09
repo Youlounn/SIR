@@ -6,13 +6,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-class Allergie {
+public class Allergie {
 	
 	int id;
 	String allergie;
 	
 	public Allergie(){
-		
 	}
 	
 	public Allergie(String al) {
