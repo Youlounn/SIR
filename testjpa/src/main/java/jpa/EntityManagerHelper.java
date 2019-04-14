@@ -45,7 +45,7 @@ public class EntityManagerHelper {
      * application.
      * </p>
      */
-    static final String PERSISTENCE_UNIT = "mysql";
+    static final String PERSISTENCE_UNIT = "anteros";
 
     private static final EntityManagerFactory factory;
     private static final ThreadLocal<EntityManager> threadLocal;
